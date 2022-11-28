@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+    <title>一致性Hash算法演示</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Document</title>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/hash.js"></script>
+    <style >
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: black;
+        }
+
+        #div1{
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        input{
+            width: 300px;
+            height: 30px;
+        }
+
+        #addserver,#addkey{
+            width: 100px;
+            height: 40px;
+        }
+
+        body{
+            text-align: center;
+        }
+
+        body *{
+            border-radius:25px;
+        }
+
+        a{
+            color: white;
+            font-size:18px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+<input type="text" id="serverval"><input type="button" id="addserver" value="addserver">
+<br>
+<br>
+<input type="text" id="keyval"><input type="button" id="addkey" value="addkey">
+<br>
+<br>
+<a href="https://github.com/wjcgithub/php_hashTable" target="_blank">源代码</a>
+</body>
+</html>
